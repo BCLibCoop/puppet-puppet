@@ -58,7 +58,7 @@ class puppet::puppetdb(
 		content => template('puppet/routes.yaml.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => [
 			# FIXME: are either of these necessary ?
@@ -75,7 +75,7 @@ class puppet::puppetdb(
 		content => template('puppet/puppetdb.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => [
 			# FIXME: are either of these necessary ?

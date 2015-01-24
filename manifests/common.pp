@@ -85,7 +85,7 @@ class puppet::common(
 		owner => root,
 		group => root,
 		#mode => 'u=rw,g=rs,o=r',	# TODO: what is the ideal mode?
-		mode => 644,			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
+		mode => '0644',			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
 	}
 
 	service { 'puppet':
@@ -102,7 +102,7 @@ class puppet::common(
 		content => template('puppet/auth.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => Service['puppet'],
 	}
@@ -115,7 +115,7 @@ class puppet::common(
 		force => true,			# also purge subdirs and links
 		owner => root,
 		group => nobody,
-		mode => 600,
+		mode => '0600',
 		backup => false,		# don't backup to filebucket
 		require => Package['puppet'],
 	}

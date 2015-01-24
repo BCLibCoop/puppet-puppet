@@ -36,7 +36,7 @@ class puppet::client(
 		content => template('puppet/puppet.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => Service['puppet'],
 	}

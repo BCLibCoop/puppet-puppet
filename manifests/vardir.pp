@@ -30,7 +30,7 @@ class puppet::vardir {	# module vardir snippet (slightly different for puppet)
 		force => true,		# also purge subdirs and links
 		owner => root,
 		group => nobody,
-		mode => 600,
+		mode => '0600',
 		backup => false,	# don't backup to filebucket
 		#before => File["${module_vardir}"],	# redundant
 		#require => Package['puppet'],	# the package should point here
@@ -42,7 +42,7 @@ class puppet::vardir {	# module vardir snippet (slightly different for puppet)
 	#	recurse => true,		# recursively manage directory
 	#	purge => true,			# purge all unmanaged files
 	#	force => true,			# also purge subdirs and links
-	#	owner => root, group => nobody, mode => 600, backup => false,
+	#	owner => root, group => nobody, mode => '0600', backup => false,
 	#	require => File["${tmp}"],	# File['/var/lib/puppet/tmp/']
 	#}
 }

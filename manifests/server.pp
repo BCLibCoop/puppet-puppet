@@ -127,7 +127,7 @@ class puppet::server(
 		content => template('puppet/fileserver.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => Service['puppetmaster'],
 	}
@@ -136,7 +136,7 @@ class puppet::server(
 		content => template('puppet/puppet.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => [Service['puppetmaster'], Service['puppet']],
 	}
@@ -145,7 +145,7 @@ class puppet::server(
 		content => template('puppet/autosign.conf.erb'),
 		owner => root,
 		group => root,
-		mode => 644,		# u=rw,go=r
+		mode => '0644',		# u=rw,go=r
 		ensure => present,
 		notify => Service['puppetmaster'],
 	}
@@ -165,7 +165,7 @@ class puppet::server(
 	#	force => false,
 	#	owner => root,
 	#	group => root,
-	#	mode => 644,
+	#	mode => '0644',
 	#	require => File['/etc/puppet/puppet.conf'],
 	#}
 

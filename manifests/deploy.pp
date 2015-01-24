@@ -111,7 +111,7 @@ class puppet::deploy(		# copy files into the /etc/puppet/ directory...
 			group => root,
 			#mode => 'u=rw,g=rs,o=r',	# TODO: what is the ideal mode?
 			#mode => 'u=rw,g=r,o=r',	# XXX: this breaks things!
-			mode => 644,			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
+			mode => '0644',			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
 			backup => $valid_backup,
 			notify => Service['puppetmaster'],	# notice the pp changes
 			before => $before,			# copy before server up
@@ -144,7 +144,7 @@ class puppet::deploy(		# copy files into the /etc/puppet/ directory...
 			group => root,
 			#mode => 'u=rw,g=rs,o=r',	# TODO: what is the ideal mode?
 			#mode => 'u=rw,g=r,o=r',	# XXX: this breaks things!
-			mode => 644,			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
+			mode => '0644',			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
 			backup => $valid_backup,
 			notify => Service['puppetmaster'],
 			before => $before,
@@ -176,7 +176,7 @@ class puppet::deploy(		# copy files into the /etc/puppet/ directory...
 			group => root,
 			#mode => 'u=rw,g=rs,o=r',	# TODO: what is the ideal mode?
 			#mode => 'u=rw,g=r,o=r',	# XXX: this breaks things!
-			mode => 644,			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
+			mode => '0644',			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
 			backup => $valid_backup,
 			notify => Service['puppetmaster'],
 			before => $before,
@@ -235,7 +235,7 @@ class puppet::deploy(		# copy files into the /etc/puppet/ directory...
 			group => root,
 			#mode => 'u=rw,g=rs,o=r',	# TODO: what is the ideal mode?
 			#mode => 'u=rw,g=r,o=r',	# XXX: this breaks things!
-			mode => 644,			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
+			mode => '0644',			# XXX: temporary until: http://projects.puppetlabs.com/issues/20001
 			backup => $valid_backup,
 			notify => Service['puppetmaster'],	# notice the pp changes
 			before => Service['puppetmaster'],	# copy before server up
