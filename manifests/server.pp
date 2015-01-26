@@ -45,8 +45,6 @@ class puppet::server(
 		start => $start,
 	}
 
-	$FW = '$FW'			# make using $FW in shorewall easier
-
 	$server = true
 
 	include puppet::params::path
@@ -182,7 +180,7 @@ class puppet::server(
 		#ACTION      SOURCE DEST                PROTO DEST  SOURCE  ORIGINAL
 		#                                             PORT  PORT(S) DEST
 		shorewall::rule { 'puppet-server': rule => "
-		Puppet/ACCEPT    ${net}    $FW
+		Puppet/ACCEPT    ${net}    \$FW
 		", comment => 'Allow incoming requests to puppet server.'}
 	}
 }
